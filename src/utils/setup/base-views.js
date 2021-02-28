@@ -1,5 +1,6 @@
-import { defineComponent } from 'vue';
+import { createApp } from 'vue';
 import kebabCase from 'lodash/kebabCase';
+const app = createApp({})
 
 const requireComponent = require.context(
   '@/components',
@@ -17,7 +18,7 @@ requireComponent.keys().forEach(fileName => {
         .replace(/\.\w+$/, '')
     );
 
-  defineComponent(
+  app.component(
     componentName,
     componentConfig.default || componentConfig
   );

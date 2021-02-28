@@ -24,9 +24,6 @@ export default {
       mainNav: [
         {
           title: "Главная"
-        },
-        {
-          title: "Услуги и поддержка"
         }
       ]
     };
