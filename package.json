@@ -3,18 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "cross-env NO_SOURCE_MAP=true npm run serve",
+    "start": "node server.js",
+    "start:dev": "cross-env NO_SOURCE_MAP=true npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "postinstall": "npm run build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "postcss": "^7.0.35",
     "qs": "^6.9.6",
     "register-service-worker": "^1.7.1",
+    "serve-static": "^1.14.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
