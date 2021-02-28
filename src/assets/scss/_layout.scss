@@ -1,0 +1,62 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    &__sidebar {
+        overflow: auto;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        top: 4rem;
+        z-index: 50;
+        width: 100%;
+
+        @media (min-width: theme("screens.sm")) {
+            width: 20rem;
+            transition: all 0.15s;
+        }
+
+        @media (min-width: theme("screens.lg")) {
+            overflow: visible;
+            display: block !important;
+            position: static;
+            z-index: 0;
+        }
+
+        &-toogle {
+
+            display: none;
+            padding: 1.25rem 2rem 1.25rem 1.25rem;
+            width: 20rem;
+            transition: all 0.15s;
+
+            @media (min-width: theme("screens.lg")) {
+                display: flex;
+                align-items: center;
+                flex-shrink: 0;
+            }
+        }
+
+        &-item {
+            cursor: pointer;
+            display: block;
+            line-height: 1.25;
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+
+            &:hover {
+                @apply text-red-100;
+            }
+        }
+    }
+
+    &__content {
+        width: 100%;
+
+        @media (min-width: theme("screens.lg")) {
+            width: calc(100% - 20rem);
+            transition: width 0.15s;
+        }
+    }
+}
